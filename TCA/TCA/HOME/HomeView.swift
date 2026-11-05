@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  TCA
 //
 //  Created by De Gaspari Andrea on 05/11/2026.
@@ -39,17 +39,6 @@ struct HomeView: View {
                 item: $store.scope(state: \.addPlant, action: \.addPlant)) { addStore in
                     AddPlantView(store: addStore)
                 }
-        }
-    }
-}
-
-struct AddPlantView: View {
-    @Bindable var store: StoreOf<AddPlantFeature>
-
-    var body: some View {
-        Form {
-            TextField("Nome", text: $store.name)
-            Button("Salva") { store.send(.saveTapped) }
         }
     }
 }
